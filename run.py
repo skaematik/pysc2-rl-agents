@@ -128,7 +128,7 @@ def main():
         agent=agent,
         train=args.train,
         summary_writer=summary_writer,
-        starting_episode=starting_episode,
+        starting_episode=args.starting_episode,
         discount=args.discount,
         n_steps=args.steps_per_batch)
 
