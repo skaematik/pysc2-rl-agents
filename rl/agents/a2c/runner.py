@@ -12,6 +12,7 @@ class A2CRunner():
   def __init__(self,
                agent,
                envs,
+               starting_episode,
                summary_writer=None,
                train=True,
                n_steps=8,
@@ -32,7 +33,7 @@ class A2CRunner():
     self.n_steps = n_steps
     self.discount = discount
     self.preproc = Preprocessor(self.envs.observation_spec()[0])
-    self.episode_counter = 0
+    self.episode_counter = starting_episode
     self.cumulative_score = 0.0
 
   def reset(self):

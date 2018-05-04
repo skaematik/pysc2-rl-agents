@@ -66,6 +66,8 @@ parser.add_argument('--save_dir', type=str, default=os.path.join('out','models')
                     help='root directory for checkpoint storage')
 parser.add_argument('--summary_dir', type=str, default=os.path.join('out','summary'),
                     help='root directory for summary storage')
+parser.add_argument('--starting_episode', type=int, default=0,
+                    help='root directory for summary storage')
 
 args = parser.parse_args()
 # TODO write args to config file and store together with summaries (https://pypi.python.org/pypi/ConfigArgParse)
@@ -126,6 +128,7 @@ def main():
         agent=agent,
         train=args.train,
         summary_writer=summary_writer,
+        starting_episode=starting_episode,
         discount=args.discount,
         n_steps=args.steps_per_batch)
 
