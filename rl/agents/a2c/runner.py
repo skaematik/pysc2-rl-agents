@@ -48,7 +48,7 @@ class A2CRunner():
     if self.summary_writer is not None:
       summary = tf.Summary()
       summary.value.add(tag='sc2/episode_score', simple_value=score)
-      self.summary_writer.add_summary(summary)#, self.episode_counter)
+      self.summary_writer.add_summary(summary, self.episode_counter)
 
     print("episode %d: score = %f" % (self.episode_counter, score))
     self.episode_counter += 1
